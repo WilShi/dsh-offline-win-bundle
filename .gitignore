@@ -1,0 +1,53 @@
+# --- dependencies ---
+node_modules/
+.pnp.*
+.yarn/cache/
+.yarn/install-state.gz
+
+# --- python ---
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+
+# --- secrets / local config ---
+.env
+.env.*
+!.env.example
+*.pem
+*.pfx
+*.p12
+*.key
+
+# --- logs ---
+*.log
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- OS / editor junk ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# --- build output ---
+dist/
+out/
+release/
+build/
+*.exe
+*.msi
+*.dmg
+*.AppImage
+*.snap
+
+# --- THIS REPO'S BIG FILES: the 5 archives, ~146 MB total. Never commit them.
+# manifest.json stays tracked: it holds the urls + sha256 and is the repo's
+# only source of truth. Binaries are reproduced with "npm run fetch".
+*.zip
+*.7z
+*.tar.gz
+*.tgz
+*.part

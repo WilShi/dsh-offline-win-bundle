@@ -1,0 +1,15 @@
+{
+  "name": "dsh-offline-win-bundle",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Offline electron-builder binary bundle: materialize the 5 GitHub-hosted archives electron-builder needs so a Windows host without github.com access can still build its NSIS installer.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "fetch": "node fetch.mjs",
+    "check": "node fetch.mjs --check"
+  }
+}
