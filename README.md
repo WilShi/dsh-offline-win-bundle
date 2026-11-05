@@ -141,3 +141,27 @@ Match each `(release, filename, sha256)` triple to the literals above
 (windows.js holds nsis / nsis-resources / winCodeSign; 7zip.js holds the
 7zip release). The cross-check in `fetch.mjs` will already have failed if any
 constant is stale, so this is only needed when it does.
+
+---
+
+## Quick start (TL;DR)
+
+```bash
+# On a machine that CAN reach github.com:
+git clone https://github.com/WilShi/dsh-offline-win-bundle.git
+cd dsh-offline-win-bundle
+npm run fetch            # downloads the 5 archives, verifies sha256
+
+# Carry this directory to the offline Windows host, then:
+pwsh ./place.ps1 -BundleDir .
+yarn dist:win
+```
+
+The binaries are **not** committed to this repo (~146 MB). `manifest.json` is the
+single source of truth: it pins each archive URL plus its sha256, and `fetch.mjs`
+reproduces the bundle from it.
+
+## License
+
+[MIT](LICENSE) © 2026 WilShi
+
